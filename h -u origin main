@@ -1,0 +1,409 @@
+[33mcommit 62d940044201df36e0f6bea1bf01a4a33769156c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Sainithesh21 <sainithesh21@gmail.com>
+Date:   Sun Apr 25 19:50:15 2021 +0530
+
+    first commit
+
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b54f50b[m
+[1m--- /dev/null[m
+[1m+++ b/.gitignore[m
+[36m@@ -0,0 +1,9 @@[m
+[32m+[m[32mnode_modules/[m
+[32m+[m[32mdist/[m
+[32m+[m[32m.scp/[m
+[32m+[m[32m.env[m
+[32m+[m[32mMakefile*.mta[m
+[32m+[m[32mmta_archives[m
+[32m+[m[32mmta-*[m
+[32m+[m[32mresources[m
+[32m+[m[32marchive.zip[m
+\ No newline at end of file[m
+[1mdiff --git a/README.md b/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a07c4c0[m
+[1m--- /dev/null[m
+[1m+++ b/README.md[m
+[36m@@ -0,0 +1,36 @@[m
+[32m+[m[32m## Application Details[m
+[32m+[m[32m|               |[m
+[32m+[m[32m| ------------- |[m
+[32m+[m[32m|**Generation Date and Time**<br>Sun Apr 25 2021 19:43:42 GMT+0530 (India Standard Time)|[m
+[32m+[m[32m|**App Generator**<br>@sap/generator-fiori|[m
+[32m+[m[32m|**App Generator Version**<br>1.1.9|[m
+[32m+[m[32m|**Generation Platform**<br>Visual Studio Code|[m
+[32m+[m[32m|**Floorplan Used**<br>Overview Page|[m
+[32m+[m[32m|**Service Type**<br>SAP System (ABAP On Premise)|[m
+[32m+[m[32m|**Service URL**<br>https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/[m
+[32m+[m[32m|**Module Name**<br>overview_es5|[m
+[32m+[m[32m|**Application Title**<br>overview_es5|[m
+[32m+[m[32m|**Namespace**<br>|[m
+[32m+[m[32m|**UI5 Theme**<br>sap_fiori_3|[m
+[32m+[m[32m|**UI5 Version**<br>Latest|[m
+[32m+[m[32m|**Enable Telemetry**<br>True|[m
+[32m+[m[32m|**FilterEntity Type**<br>Product|[m
+[32m+[m
+[32m+[m[32m## overview_es5[m
+[32m+[m
+[32m+[m[32mA Fiori application.[m
+[32m+[m
+[32m+[m[32m### Starting the generated app[m
+[32m+[m
+[32m+[m[32m-   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  In order to launch the generated app, simply run the following from the generated app root folder:[m
+[32m+[m
+[32m+[m[32m```[m
+[32m+[m[32m    npm start[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m
+[32m+[m[32m#### Pre-requisites:[m
+[32m+[m
+[32m+[m[32m1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)[m
+[32m+[m
+[32m+[m
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3aa356b[m
+[1m--- /dev/null[m
+[1m+++ b/package-lock.json[m
+[36m@@ -0,0 +1,7062 @@[m
+[32m+[m[32m{[m
+[32m+[m	[32m"name": "overview_es5",[m
+[32m+[m	[32m"version": "0.0.1",[m
+[32m+[m	[32m"lockfileVersion": 1,[m
+[32m+[m	[32m"requires": true,[m
+[32m+[m	[32m"dependencies": {[m
+[32m+[m		[32m"@babel/runtime": {[m
+[32m+[m			[32m"version": "7.13.17",[m
+[32m+[m			[32m"resolved": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.13.17.tgz",[m
+[32m+[m			[32m"integrity": "sha512-NCdgJEelPTSh+FEFylhnP1ylq848l1z9t9N0j1Lfbcw0+KXGjsTvUmkxy+voLLXB5SOKMbLLx4jxYliGrYQseA==",[m
+[32m+[m			[32m"dev": true,[m
+[32m+[m			[32m"requires": {[m
+[32m+[m				[32m"regenerator-runtime": "^0.13.4"[m
+[32m+[m			[32m}[m
+[32m+[m		[32m},[m
+[32m+[m		[32m"@nodelib/fs.scandir": {[m
+[32m+[m			[32m"version": "2.1.4",[m
+[32m+[m			[32m"resolved": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz",[m
+[32m+[m			[32m"integrity": "sha512-33g3pMJk3bg5nXbL/+CY6I2eJDzZAni49PfJnL5fghPTggPvBd/pFNSgJsdAgWptuFu7qq/ERvOYFlhvsLTCKA==",[m
+[32m+[m			[32m"dev": true,[m
+[32m+[m			[32m"requires": {[m
+[32m+[m				[32m"@nodelib/fs.stat": "2.0.4",[m
+[32m+[m				[32m"run-parallel": "^1.1.9"[m
+[32m+[m			[32m}[m
+[32m+[m		[32m},[m
+[32m+[m		[32m"@nodelib/fs.stat": {[m
+[32m+[m			[32m"version": "2.0.4",[m
+[32m+[m			[32m"resolved": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.4.tgz",[m
+[32m+[m			[32m"integrity": "sha512-IYlHJA0clt2+Vg7bccq+TzRdJvv19c2INqBSsoOLp1je7xjtr7J26+WXR72MCdvU9q1qTzIWDfhMf+DRvQJK4Q==",[m
+[32m+[m			[32m"dev": true[m
+[32m+[m		[32m},[m
+[32m+[m		[32m"@nodelib/fs.walk": {[m
+[32m+[m			[32m"version": "1.2.6",[m
+[32m+[m			[32m"resolved": "https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.6.tgz",[m
+[32m+[m			[32m"integrity": "sha512-8Broas6vTtW4GIXTAHDoE32hnN2M5ykgCpWGbuXHQ15vEMqr23pB76e/GZcYsZCHALv50ktd24qhEyKr6wBtow==",[m
+[32m+[m			[32m"dev": true,[m
+[32m+[m			[32m"requires": {[m
+[32m+[m				[32m"@nodelib/fs.scandir": "2.1.4",[m
+[32m+[m				[32m"fastq": "^1.6.0"[m
+[32m+[m			[32m}[m
+[32m+[m		[32m},[m
+[32m+[m		[32m"@sap/ux-specification": {[m
+[32m+[m			[32m"version": "1.84.9",[m
+[32m+[m			[32m"resolved": "https://registry.npmjs.org/@sap/ux-specification/-/ux-specification-1.84.9.tgz",[m
+[32m+[m			[32m"integrity": "sha512-jL2tp8K9D7ysaQWQ3OytVV9N1tfTs3suZs4O9YA9Mzv3dwL6xvSKTuVRzydfH5XDmpjOIVJ5/vIN1lgzQkl9HQ==",[m
+[32m+[m			[32m"dev": true,[m
+[32m+[m			[32m"requires": {[m
+[32m+[m				[32m"@sap-ux/annotation-converter": "0.3.10",[m
+[32m+[m				[32m"@sap-ux/edmx-parser": "0.3.10",[m
+[32m+[m				[32m"@sap-ux/vocabularies-types": "0.3.10",[m
+[32m+[m				[32m"@ui5/flexibility-utils": "0.1.3",[m
+[32m+[m				[32m"ajv": "6.12.6",[m
+[32m+[m				[32m"deepmerge": "4.2.2",[m
+[32m+[m				[32m"ejs": "3.1.5",[m
+[32m+[m				[32m"i18next": "19.8.4",[m
+[32m+[m				[32m"lodash.unset": "4.5.2",[m
+[32m+[m				[32m"path": "0.12.7",[m
+[32m+[m				[32m"reflect-metadata": "0.1.13",[m
+[32m+[m				[32m"xml-js": "1.6.11"[m
+[32m+[m			[32m},[m
+[32m+[m			[32m"dependencies": {[m
+[32m+[m				[32m"@sap-ux/annotation-converter": {[m
+[32m+[m					[32m"version": "0.3.10",[m
+[32m+[m					[32m"bundled": true,[m
+[32m+[m					[32m"dev": true[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@sap-ux/edmx-parser": {[m
+[32m+[m					[32m"version": "0.3.10",[m
+[32m+[m					[32m"bundled": true,[m
+[32m+[m					[32m"dev": true,[m
+[32m+[m					[32m"requires": {[m
+[32m+[m						[32m"@sap-ux/vocabularies-types": "0.3.10",[m
+[32m+[m						[32m"xml-js": "1.6.11"[m
+[32m+[m					[32m}[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@sap-ux/vocabularies-types": {[m
+[32m+[m					[32m"version": "0.3.10",[m
+[32m+[m					[32m"bundled": true,[m
+[32m+[m					[32m"dev": true[m
+[32m+[m				[32m}[m
+[32m+[m			[32m}[m
+[32m+[m		[32m},[m
+[32m+[m		[32m"@sap/ux-ui5-tooling": {[m
+[32m+[m			[32m"version": "1.1.9",[m
+[32m+[m			[32m"resolved": "https://registry.npmjs.org/@sap/ux-ui5-tooling/-/ux-ui5-tooling-1.1.9.tgz",[m
+[32m+[m			[32m"integrity": "sha512-CwbOhhVmEbCGWmbkTqryDusxisiEIGKyHrzHc9zxpishmlxjQHop1dKGeZ5p0PV0ZzzPYyegX/9WVZhH5BH+qA==",[m
+[32m+[m			[32m"dev": true,[m
+[32m+[m			[32m"requires": {[m
+[32m+[m				[32m"@ui5/fs": "2.0.6",[m
+[32m+[m				[32m"express": "4.17.1",[m
+[32m+[m				[32m"keytar": "7.2.0",[m
+[32m+[m				[32m"livereload": "0.9.1",[m
+[32m+[m				[32m"update-notifier-webpack": "5.0.1"[m
+[32m+[m			[32m}[m
+[32m+[m		[32m},[m
+[32m+[m		[32m"@sindresorhus/is": {[m
+[32m+[m			[32m"version": "0.14.0",[m
+[32m+[m			[32m"resolved": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.14.0.tgz",[m
+[32m+[m			[32m"integrity": "sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==",[m
+[32m+[m			[32m"dev": true[m
+[32m+[m		[32m},[m
+[32m+[m		[32m"@szmarczak/http-timer": {[m
+[32m+[m			[32m"version": "1.1.2",[m
+[32m+[m			[32m"resolved": "https://registry.npmjs.org/@szmarczak/http-timer/-/http-timer-1.1.2.tgz",[m
+[32m+[m			[32m"integrity": "sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==",[m
+[32m+[m			[32m"dev": true,[m
+[32m+[m			[32m"requires": {[m
+[32m+[m				[32m"defer-to-connect": "^1.0.1"[m
+[32m+[m			[32m}[m
+[32m+[m		[32m},[m
+[32m+[m		[32m"@ui5/cli": {[m
+[32m+[m			[32m"version": "2.10.3",[m
+[32m+[m			[32m"resolved": "https://registry.npmjs.org/@ui5/cli/-/cli-2.10.3.tgz",[m
+[32m+[m			[32m"integrity": "sha512-cJufebw+e2Ok6NDsZmnpUx6Cui57UHaaBMalpcxxwpgsRF4Ucf2lvn9jlLySsjxOX/BvrG1igO8d9FM5jbNG/Q==",[m
+[32m+[m			[32m"dev": true,[m
+[32m+[m			[32m"requires": {[m
+[32m+[m				[32m"@ui5/builder": "^2.8.3",[m
+[32m+[m				[32m"@ui5/fs": "^2.0.6",[m
+[32m+[m				[32m"@ui5/logger": "^2.0.1",[m
+[32m+[m				[32m"@ui5/project": "^2.3.1",[m
+[32m+[m				[32m"@ui5/server": "^2.2.9",[m
+[32m+[m				[32m"chalk": "^4.1.0",[m
+[32m+[m				[32m"data-with-position": "^0.4.1",[m
+[32m+[m				[32m"import-local": "^3.0.2",[m
+[32m+[m				[32m"js-yaml": "^4.1.0",[m
+[32m+[m				[32m"open": "^7.4.2",[m
+[32m+[m				[32m"semver": "^7.3.5",[m
+[32m+[m				[32m"treeify": "^1.0.1",[m
+[32m+[m				[32m"update-notifier": "^5.1.0",[m
+[32m+[m				[32m"yargs": "^16.2.0"[m
+[32m+[m			[32m},[m
+[32m+[m			[32m"dependencies": {[m
+[32m+[m				[32m"@babel/code-frame": {[m
+[32m+[m					[32m"version": "7.12.13",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.12.13.tgz",[m
+[32m+[m					[32m"integrity": "sha512-HV1Cm0Q3ZrpCR93tkWOYiuYIgLxZXZFVG2VgK+MBWjUqZTundupbfx2aXarXuw5Ko5aMcjtJgbSs4vUGBS5v6g==",[m
+[32m+[m					[32m"dev": true,[m
+[32m+[m					[32m"requires": {[m
+[32m+[m						[32m"@babel/highlight": "^7.12.13"[m
+[32m+[m					[32m}[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@babel/helper-validator-identifier": {[m
+[32m+[m					[32m"version": "7.12.11",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.12.11.tgz",[m
+[32m+[m					[32m"integrity": "sha512-np/lG3uARFybkoHokJUmf1QfEvRVCPbmQeUQpKow5cQ3xWrV9i3rUHodKDJPQfTVX61qKi+UdYk8kik84n7XOw==",[m
+[32m+[m					[32m"dev": true[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@babel/highlight": {[m
+[32m+[m					[32m"version": "7.13.10",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@babel/highlight/-/highlight-7.13.10.tgz",[m
+[32m+[m					[32m"integrity": "sha512-5aPpe5XQPzflQrFwL1/QoeHkP2MsA4JCntcXHRhEsdsfPVkvPi2w7Qix4iV7t5S/oC9OodGrggd8aco1g3SZFg==",[m
+[32m+[m					[32m"dev": true,[m
+[32m+[m					[32m"requires": {[m
+[32m+[m						[32m"@babel/helper-validator-identifier": "^7.12.11",[m
+[32m+[m						[32m"chalk": "^2.0.0",[m
+[32m+[m						[32m"js-tokens": "^4.0.0"[m
+[32m+[m					[32m},[m
+[32m+[m					[32m"dependencies": {[m
+[32m+[m						[32m"ansi-styles": {[m
+[32m+[m							[32m"version": "3.2.1",[m
+[32m+[m							[32m"resolved": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz",[m
+[32m+[m							[32m"integrity": "sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==",[m
+[32m+[m							[32m"dev": true,[m
+[32m+[m							[32m"requires": {[m
+[32m+[m								[32m"color-convert": "^1.9.0"[m
+[32m+[m							[32m}[m
+[32m+[m						[32m},[m
+[32m+[m						[32m"chalk": {[m
+[32m+[m							[32m"version": "2.4.2",[m
+[32m+[m							[32m"resolved": "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz",[m
+[32m+[m							[32m"integrity": "sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==",[m
+[32m+[m							[32m"dev": true,[m
+[32m+[m							[32m"requires": {[m
+[32m+[m								[32m"ansi-styles": "^3.2.1",[m
+[32m+[m								[32m"escape-string-regexp": "^1.0.5",[m
+[32m+[m								[32m"supports-color": "^5.3.0"[m
+[32m+[m							[32m}[m
+[32m+[m						[32m},[m
+[32m+[m						[32m"color-convert": {[m
+[32m+[m							[32m"version": "1.9.3",[m
+[32m+[m							[32m"resolved": "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz",[m
+[32m+[m							[32m"integrity": "sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==",[m
+[32m+[m							[32m"dev": true,[m
+[32m+[m							[32m"requires": {[m
+[32m+[m								[32m"color-name": "1.1.3"[m
+[32m+[m							[32m}[m
+[32m+[m						[32m},[m
+[32m+[m						[32m"color-name": {[m
+[32m+[m							[32m"version": "1.1.3",[m
+[32m+[m							[32m"resolved": "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz",[m
+[32m+[m							[32m"integrity": "sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=",[m
+[32m+[m							[32m"dev": true[m
+[32m+[m						[32m},[m
+[32m+[m						[32m"escape-string-regexp": {[m
+[32m+[m							[32m"version": "1.0.5",[m
+[32m+[m							[32m"resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",[m
+[32m+[m							[32m"integrity": "sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=",[m
+[32m+[m							[32m"dev": true[m
+[32m+[m						[32m},[m
+[32m+[m						[32m"has-flag": {[m
+[32m+[m							[32m"version": "3.0.0",[m
+[32m+[m							[32m"resolved": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",[m
+[32m+[m							[32m"integrity": "sha1-tdRU3CGZriJWmfNGfloH87lVuv0=",[m
+[32m+[m							[32m"dev": true[m
+[32m+[m						[32m},[m
+[32m+[m						[32m"supports-color": {[m
+[32m+[m							[32m"version": "5.5.0",[m
+[32m+[m							[32m"resolved": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",[m
+[32m+[m							[32m"integrity": "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==",[m
+[32m+[m							[32m"dev": true,[m
+[32m+[m							[32m"requires": {[m
+[32m+[m								[32m"has-flag": "^3.0.0"[m
+[32m+[m							[32m}[m
+[32m+[m						[32m}[m
+[32m+[m					[32m}[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@babel/parser": {[m
+[32m+[m					[32m"version": "7.13.15",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@babel/parser/-/parser-7.13.15.tgz",[m
+[32m+[m					[32m"integrity": "sha512-b9COtcAlVEQljy/9fbcMHpG+UIW9ReF+gpaxDHTlZd0c6/UU9ng8zdySAW9sRTzpvcdCHn6bUcbuYUgGzLAWVQ==",[m
+[32m+[m					[32m"dev": true[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@nodelib/fs.scandir": {[m
+[32m+[m					[32m"version": "2.1.4",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz",[m
+[32m+[m					[32m"integrity": "sha512-33g3pMJk3bg5nXbL/+CY6I2eJDzZAni49PfJnL5fghPTggPvBd/pFNSgJsdAgWptuFu7qq/ERvOYFlhvsLTCKA==",[m
+[32m+[m					[32m"dev": true,[m
+[32m+[m					[32m"requires": {[m
+[32m+[m						[32m"@nodelib/fs.stat": "2.0.4",[m
+[32m+[m						[32m"run-parallel": "^1.1.9"[m
+[32m+[m					[32m}[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@nodelib/fs.stat": {[m
+[32m+[m					[32m"version": "2.0.4",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.4.tgz",[m
+[32m+[m					[32m"integrity": "sha512-IYlHJA0clt2+Vg7bccq+TzRdJvv19c2INqBSsoOLp1je7xjtr7J26+WXR72MCdvU9q1qTzIWDfhMf+DRvQJK4Q==",[m
+[32m+[m					[32m"dev": true[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@nodelib/fs.walk": {[m
+[32m+[m					[32m"version": "1.2.6",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.6.tgz",[m
+[32m+[m					[32m"integrity": "sha512-8Broas6vTtW4GIXTAHDoE32hnN2M5ykgCpWGbuXHQ15vEMqr23pB76e/GZcYsZCHALv50ktd24qhEyKr6wBtow==",[m
+[32m+[m					[32m"dev": true,[m
+[32m+[m					[32m"requires": {[m
+[32m+[m						[32m"@nodelib/fs.scandir": "2.1.4",[m
+[32m+[m						[32m"fastq": "^1.6.0"[m
+[32m+[m					[32m}[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@sindresorhus/is": {[m
+[32m+[m					[32m"version": "0.14.0",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@sindresorhus/is/-/is-0.14.0.tgz",[m
+[32m+[m					[32m"integrity": "sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==",[m
+[32m+[m					[32m"dev": true[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@szmarczak/http-timer": {[m
+[32m+[m					[32m"version": "1.1.2",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@szmarczak/http-timer/-/http-timer-1.1.2.tgz",[m
+[32m+[m					[32m"integrity": "sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==",[m
+[32m+[m					[32m"dev": true,[m
+[32m+[m					[32m"requires": {[m
+[32m+[m						[32m"defer-to-connect": "^1.0.1"[m
+[32m+[m					[32m}[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@types/normalize-package-data": {[m
+[32m+[m					[32m"version": "2.4.0",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz",[m
+[32m+[m					[32m"integrity": "sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==",[m
+[32m+[m					[32m"dev": true[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@ui5/builder": {[m
+[32m+[m					[32m"version": "2.8.3",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@ui5/builder/-/builder-2.8.3.tgz",[m
+[32m+[m					[32m"integrity": "sha512-EESeSg6+cZdj7k1C2K1dMxjyXd4vXoNEflnGRmhUCm3e2uVyBOX54q2tdNiNhmbXf69kZyxXmyv8kK1/UYjKmA==",[m
+[32m+[m					[32m"dev": true,[m
+[32m+[m					[32m"requires": {[m
+[32m+[m						[32m"@ui5/fs": "^2.0.6",[m
+[32m+[m						[32m"@ui5/logger": "^2.0.1",[m
+[32m+[m						[32m"cheerio": "^0.22.0",[m
+[32m+[m						[32m"escape-unicode": "^0.2.0",[m
+[32m+[m						[32m"escodegen": "^2.0.0",[m
+[32m+[m						[32m"escope": "^3.6.0",[m
+[32m+[m						[32m"esprima": "^4.0.1",[m
+[32m+[m						[32m"estraverse": "5.1.0",[m
+[32m+[m						[32m"globby": "^11.0.3",[m
+[32m+[m						[32m"graceful-fs": "^4.2.6",[m
+[32m+[m						[32m"jsdoc": "^3.6.6",[m
+[32m+[m						[32m"less-openui5": "^0.11.1",[m
+[32m+[m						[32m"make-dir": "^3.1.0",[m
+[32m+[m						[32m"pretty-data": "^0.40.0",[m
+[32m+[m						[32m"pretty-hrtime": "^1.0.3",[m
+[32m+[m						[32m"replacestream": "^4.0.3",[m
+[32m+[m						[32m"rimraf": "^3.0.2",[m
+[32m+[m						[32m"semver": "^7.3.5",[m
+[32m+[m						[32m"terser": "^5.6.1",[m
+[32m+[m						[32m"xml2js": "^0.4.23",[m
+[32m+[m						[32m"yazl": "^2.5.1"[m
+[32m+[m					[32m}[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@ui5/fs": {[m
+[32m+[m					[32m"version": "2.0.6",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@ui5/fs/-/fs-2.0.6.tgz",[m
+[32m+[m					[32m"integrity": "sha512-dBugwsHP7F7IrfVAaqf7FSDhknK6RhrLOpgkp7FmL/WRA02Q3FQzroFJc7CZEP4bOnAvWC3TpghOfHV2/RqR3A==",[m
+[32m+[m					[32m"dev": true,[m
+[32m+[m					[32m"requires": {[m
+[32m+[m						[32m"@ui5/logger": "^2.0.1",[m
+[32m+[m						[32m"clone": "^2.1.0",[m
+[32m+[m						[32m"globby": "^11.0.1",[m
+[32m+[m						[32m"graceful-fs": "^4.2.4",[m
+[32m+[m						[32m"make-dir": "^3.1.0",[m
+[32m+[m						[32m"micromatch": "^4.0.2",[m
+[32m+[m						[32m"minimatch": "^3.0.3",[m
+[32m+[m						[32m"pretty-hrtime": "^1.0.3",[m
+[32m+[m						[32m"random-int": "^2.0.1"[m
+[32m+[m					[32m}[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@ui5/logger": {[m
+[32m+[m					[32m"version": "2.0.1",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@ui5/logger/-/logger-2.0.1.tgz",[m
+[32m+[m					[32m"integrity": "sha512-FU5moQF9HATZEIJVQxXWRsUKMveIRJNPSmH3Mptcuc05f6gKu1BWcamDaDHXmMSyoKRounY9Aok94NTQMi7eDw==",[m
+[32m+[m					[32m"dev": true,[m
+[32m+[m					[32m"requires": {[m
+[32m+[m						[32m"npmlog": "^4.1.2"[m
+[32m+[m					[32m}[m
+[32m+[m				[32m},[m
+[32m+[m				[32m"@ui5/project": {[m
+[32m+[m					[32m"version": "2.3.1",[m
+[32m+[m					[32m"resolved": "https://registry.npmjs.org/@ui5/project/-/project-2.3.1.tgz",[m
+[32m+[m					[32m"integrity": "sha512-fghcfTNauxPnChhQXXJSrJ9rGnK5Z0AjqgMqi55aUplKgIK9mYAdL5ruQJNJLZe6FSSb5YZU0M63rqZiwD29TQ==",[m
+[32m+[m					[32m"dev": true,[m
+[32m+[m					[32m"requires": {[m
+[32m+[m						[32m"@ui5/builder": "^2.8.1",[m
+[32m+[m						[32m"@ui5/logger": "^2.0.1",[m
+[32m+[m						[32m"@ui5/server": "^2.2.8",[m
+[32m+[m						[32m"ajv": "^6.12.6",[m
+[32m+[m						[32m"ajv-errors": "^1.0.1",[m
+[32m+[m						[32m"chalk": "^4.1.0",[m
+[32m+[m						[32m"escape-string-regexp": "^4.0.0",[m
+[32m+[m						[32m"graceful-fs": "^4.2.6",[m
+[32m+[m						[32m"js-yaml": "^4.0.0",
