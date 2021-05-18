@@ -111,7 +111,7 @@
                 "model": "mainService",
                 "template": "sap.ovp.cards.list",
                 "settings": {
-                    "title": "Products",
+                    "title": "{{products}}",
                     "entitySet": "ProductSet",
                     "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
                     "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Default",
